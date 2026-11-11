@@ -43,7 +43,7 @@ export default function HowItWorksSection() {
     <section id="how-it-works" className="py-10 sm:py-20 px-5">
       <div className="max-w-300 mx-auto space-y-8">
         <div className="flex flex-col items-center gap-3">
-          <h3 className="text-Purple text-lg font-semibold uppercase">
+          <h3 className="text-Purple font-semibold uppercase">
             How it works
           </h3>
           <h2 className="text-[32px] sm:text-[40px] leading-[120%] lg:text-5xl font-bold text-center ">
