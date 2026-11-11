@@ -9,16 +9,16 @@ export default function Navbar() {
       name: "Home",
     },
     {
+      path: "#features",
+      name: "Features",
+    },
+    {
+      path: "#how-it-works",
+      name: "How it works",
+    },
+    {
       path: "#about",
       name: "About",
-    },
-    {
-      path: "#save",
-      name: "Save",
-    },
-    {
-      path: "#contact",
-      name: "Contact",
     },
   ];
   return (
@@ -28,7 +28,7 @@ export default function Navbar() {
           <h1 className="text-[30px] sm:text-4xl font-bold text-[#1e1926]">
             <Link href={"/"}>SaveSpend</Link>
           </h1>
-          <ul className="hidden md:flex justify-center items-center gap-8 lg:gap-10">
+          <ul className="hidden md:flex justify-center items-center gap-4 lg:gap-10">
             {links.map((link, id) => (
               <li key={id}>
                 <Link

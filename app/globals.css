@@ -24,6 +24,10 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: #f2f2f0;
   color: #1e1926;

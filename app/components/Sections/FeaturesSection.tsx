@@ -3,8 +3,8 @@ import { TbTargetArrow } from "react-icons/tb";
 import { TbPigMoney } from "react-icons/tb";
 import { FaChartPie } from "react-icons/fa";
 
-export default function HighlightsSection() {
-  const highlights = [
+export default function FeaturesSection() {
+  const features = [
     {
       icon: <GiReceiveMoney />,
       title: "Income:",
@@ -27,25 +27,25 @@ export default function HighlightsSection() {
     },
   ];
   return (
-    <section className="sm:pt-10 lg:pt-5 pb-20 px-5">
+    <section id="features" className="sm:pt-10 lg:pt-5 pb-20 px-5">
       <div className="max-w-300 mx-auto space-y-10">
         <h2 className="text-[32px] sm:text-[40px] leading-[120%] lg:text-5xl text-center font-bold">
           See where you stand and how you can do better.
         </h2>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 justify-center">
-          {highlights.map((highlight, id) => (
+          {features.map((feature, id) => (
             <div
               key={id}
               className="px-4 py-6 border border-zinc-300 rounded-3xl flex flex-col gap-5 items-center md:items-start shadow"
             >
               <div className="flex justify-center items-center bg-white rounded-full size-12 border border-zinc-300">
-                <div className="text-Purple text-2xl">{highlight.icon}</div>
+                <div className="text-Purple text-2xl">{feature.icon}</div>
               </div>
               <div className="flex flex-col gap-3 items-center md:items-start">
-                <h3 className="text-xl font-bold">{highlight.title}</h3>
+                <h3 className="text-xl font-bold">{feature.title}</h3>
                 <p className="text-zinc-600 text-center md:text-left">
-                  {highlight.descripition}
+                  {feature.descripition}
                 </p>
               </div>
             </div>
