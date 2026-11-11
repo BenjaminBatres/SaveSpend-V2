@@ -27,13 +27,13 @@ export default function FeaturesSection() {
     },
   ];
   return (
-    <section id="features" className="sm:pt-10 lg:pt-5 pb-20 px-5">
+    <section id="features" className="sm:pt-10 lg:pt-5 pb-10 sm:pb-20 px-5">
       <div className="max-w-300 mx-auto space-y-10">
         <h2 className="text-[32px] sm:text-[40px] leading-[120%] lg:text-5xl text-center font-bold">
           See where you stand and how you can do better.
         </h2>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 justify-center">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 justify-center">
           {features.map((feature, id) => (
             <div
               key={id}
