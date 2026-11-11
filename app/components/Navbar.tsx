@@ -24,7 +24,7 @@ export default function Navbar() {
   return (
     <header className="fixed w-full px-5">
       <div className="max-w-300 mx-auto py-5 sm:py-8">
-        <nav className="flex justify-between items-center backdrop-blur-2xl bg-white/80 rounded-full py-2 pl-4 pr-4 md:pl-2 shadow-lg">
+        <nav className="flex justify-between items-center backdrop-blur-2xl bg-white/80 rounded-full py-2 px-4 shadow-lg">
           <h1 className="text-[30px] sm:text-4xl font-bold text-[#1e1926]">
             SaveSpend
           </h1>

@@ -22,7 +22,7 @@ export default function HeroSection() {
             </Link>
           </div>
 
-          <Image src={HeroImg} alt="" className="w-137.5" />
+          <Image src={HeroImg} alt="" loading="eager" className="w-137.5" />
         </div>
       </div>
     </div>
