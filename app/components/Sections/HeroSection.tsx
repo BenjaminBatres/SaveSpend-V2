@@ -16,7 +16,7 @@ export default function HeroSection() {
             </p>
             <Link
               href={"/"}
-              className="flex items-center gap-3.5 transition-all duration-300 group w-fit py-5 px-8 font-medium lg:text-lg bg-[#8c5cff] text-white rounded-full"
+              className="flex items-center gap-3.5 transition-all duration-300 group w-fit py-5 px-8 font-medium lg:text-lg bg-Purple text-white rounded-full"
             >
               Get Started
             </Link>
