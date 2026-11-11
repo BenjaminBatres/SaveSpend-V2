@@ -36,7 +36,7 @@ export default function Menu({ links }: IProps) {
             isOpen ? "opacity-100" : "opacity-0"
           }`}
         >
-          <div className="rounded-2xl border border-white/60 bg-[#E9DFFF] py-5 px-2 shadow-lg shadow-purple-900/15">
+          <div className="rounded-2xl border border-white/60 bg-Purple-200 backdrop-blur-2xl py-5 px-2 shadow-lg shadow-purple-900/15">
             <div className="flex flex-col gap-2">
               {links.map((link) => (
                 <Link
@@ -64,7 +64,7 @@ export default function Menu({ links }: IProps) {
               <Link
                 href="/signup"
                 onClick={() => setIsOpen(false)}
-                className="rounded-xl bg-[#8c5cff] px-4 py-3 text-center font-semibold text-white transition hover:bg-[#8c5cff]/80"
+                className="rounded-xl bg-Purple px-4 py-3 text-center font-semibold text-white transition hover:bg-Purple/80"
               >
                 Get Started
               </Link>
