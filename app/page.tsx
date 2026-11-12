@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import FeaturesSction from "./components/Sections/FeaturesSection";
 import HowItWorksSection from "./components/Sections/HowItWorksSection";
 import AboutSection from "./components/Sections/AboutSection";
+import Footer from "./components/Sections/Footer";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <FeaturesSction />
       <HowItWorksSection />
       <AboutSection />
+      <Footer />
     </>
   );
 }
