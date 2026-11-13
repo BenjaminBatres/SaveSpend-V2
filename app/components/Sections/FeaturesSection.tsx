@@ -4,6 +4,7 @@ import { LuChartNoAxesCombined } from "react-icons/lu";
 import { LuWallet } from "react-icons/lu";
 import Features from "../ui/Features";
 import { MonthlySpendingChart } from "../ui/MonthlySpendingChart";
+import * as motion from "motion/react-client";
 export default function FeaturesSection() {
   const features = [
     {
@@ -35,20 +36,41 @@ export default function FeaturesSection() {
     <section id="features" className="sm:pt-10 lg:pt-5 pb-10 sm:pb-20 px-5">
       <div className="max-w-300 mx-auto space-y-10">
         <div className="flex flex-col items-center gap-3">
-          <h3 className="text-Purple font-medium uppercase">Features</h3>
-          <h2 className="text-[32px] sm:text-[40px] leading-[120%] lg:text-5xl font-bold text-center ">
+          <motion.h3
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1, duration: 0.5 }}
+            className="text-Purple font-medium uppercase"
+          >
+            Features
+          </motion.h3>
+          <motion.h2
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2, duration: 0.5 }}
+            className="text-[32px] sm:text-[40px] leading-[120%] lg:text-5xl font-bold text-center "
+          >
             Everything you need to manage your money.
-          </h2>
-          <p className="text-Gray-purple sm:text-lg text-center">
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3, duration: 0.5 }}
+            className="text-Gray-purple sm:text-lg text-center"
+          >
             Take control of your finances with simple tools that help you track
             spending, manage bills, and reach your goals.
-          </p>
+          </motion.p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-4">
           {features.map((feature, id) => (
             <Features
               key={id}
+              id={id}
               theme={feature.theme}
               title={feature.title}
               icon={feature.icon}

@@ -2,7 +2,7 @@ import { TbSparkles2 } from "react-icons/tb";
 import { FiTrendingDown, FiTrendingUp } from "react-icons/fi";
 import { IoEyeOutline } from "react-icons/io5";
 import { BsBullseye } from "react-icons/bs";
-
+import * as motion from "motion/react-client";
 export default function AboutSection() {
   const finances = [
     {
@@ -33,18 +33,44 @@ export default function AboutSection() {
     <section id="about" className="py-15 px-5">
       <div className="max-w-300 mx-auto space-y-4">
         <div className="space-y-3">
-          <h3 className="text-Purple font-medium uppercase">About SaveSpend</h3>
-          <h2 className="text-[32px] sm:text-[40px] leading-[120%] font-bold">
+          <motion.h3
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1, duration: 0.5 }}
+            className="text-Purple font-medium uppercase"
+          >
+            About SaveSpend
+          </motion.h3>
+          <motion.h2
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2, duration: 0.5 }}
+            className="text-[32px] sm:text-[40px] leading-[120%] font-bold"
+          >
             A better relationship with your money starts here.
-          </h2>
-          <p className="text-Gray-purple sm:text-lg">
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3, duration: 0.5 }}
+            className="text-Gray-purple sm:text-lg"
+          >
             Managing money shouldn't feel overwhelming. SaveSpend was designed
             to make understanding your finances, tracking expenses, and working
             toward savings goals easier.
-          </p>
+          </motion.p>
         </div>
 
-        <div className="px-3 py-4 bg-[#eee6ff] rounded-2xl space-y-3">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.4, duration: 0.5 }}
+          className="px-3 py-4 bg-[#eee6ff] rounded-2xl space-y-3"
+        >
           <div className="flex justify-between items-center">
             <h2 className="text-xl font-semibold">
               Your finances, simplified.
@@ -88,19 +114,26 @@ export default function AboutSection() {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
 
-        <div className="grid sm:grid-cols-2 gap-4">
+        <motion.div className="grid sm:grid-cols-2 gap-4">
           {purpose.map((item, id) => (
-            <div key={id} className="bg-white p-3 rounded-2xl space-y-2">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: (id + 4) * 0.15, duration: 0.5 }}
+              key={id}
+              className="bg-white p-3 rounded-2xl space-y-2"
+            >
               <div className="text-Purple">{item.icon}</div>
               <div className="space-y-1">
                 <h2 className="text-lg font-semibold">{item.title}</h2>
                 <p className="text-Gray-purple text-sm">{item.desc}</p>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

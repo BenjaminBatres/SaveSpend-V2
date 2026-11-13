@@ -2,7 +2,7 @@ import { LuUserRoundPlus } from "react-icons/lu";
 import { LuChartNoAxesCombined } from "react-icons/lu";
 import { LuWallet } from "react-icons/lu";
 import { MdOutlineArrowRightAlt } from "react-icons/md";
-
+import * as motion from "motion/react-client";
 import StepsDetails from "../ui/StepsDetails";
 import Link from "next/link";
 
@@ -43,16 +43,34 @@ export default function HowItWorksSection() {
     <section id="how-it-works" className="py-10 sm:py-20 px-5">
       <div className="max-w-300 mx-auto space-y-8">
         <div className="flex flex-col items-center gap-3">
-          <h3 className="text-Purple font-semibold uppercase">
+          <motion.h3
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1, duration: 0.5 }}
+            className="text-Purple font-semibold uppercase"
+          >
             How it works
-          </h3>
-          <h2 className="text-[32px] sm:text-[40px] leading-[120%] lg:text-5xl font-bold text-center ">
+          </motion.h3>
+          <motion.h2
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2, duration: 0.5 }}
+            className="text-[32px] sm:text-[40px] leading-[120%] lg:text-5xl font-bold text-center "
+          >
             Managing money, made simple.
-          </h2>
-          <p className="text-Purple sm:text-lg text-center">
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3, duration: 0.5 }}
+            className="text-Gray-purple sm:text-lg text-center"
+          >
             Three simple steps to take control of your finances and build better
             habits.
-          </p>
+          </motion.p>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
           {steps.map((step, id) => (
@@ -77,7 +95,7 @@ export default function HowItWorksSection() {
                           placeholder={
                             id === 0 ? "Email address" : "Create password"
                           }
-                          className="p-2 bg-[#f5f0ff] w-full rounded-lg text-sm"
+                          className="p-2 bg-Purple-Theme w-full rounded-lg text-sm"
                         />
                       </div>
                     ))}
@@ -91,7 +109,7 @@ export default function HowItWorksSection() {
                 <div className="space-y-3">
                   <h3 className="text-Gray-purple text-sm">Monthly expenses</h3>
                   <h2 className="text-[28px] font-medium">$1,245.00</h2>
-                  <div className="w-full bg-[#f5f0ff] rounded-full relative">
+                  <div className="w-full bg-Purple-Theme rounded-full relative">
                     <div className="h-3 w-[45%] bg-Purple rounded-l-full" />
                     <div className="absolute h-3 w-[30%] bg-[#b99bef] left-[45%] top-0" />
                   </div>
@@ -115,7 +133,7 @@ export default function HowItWorksSection() {
                     <h2 className="text-[28px] font-medium">$3,200</h2>
                     <p className="text-Purple font-medium">64%</p>
                   </div>
-                  <div className="w-full bg-[#f5f0ff] rounded-full">
+                  <div className="w-full bg-Purple-Theme rounded-full">
                     <div className="h-3 bg-Purple rounded-full w-[64%]" />
                   </div>
                   <p className="text-Gray-purple text-sm">
@@ -128,19 +146,38 @@ export default function HowItWorksSection() {
         </div>
 
         <div className="flex flex-col items-center gap-2">
-          <h2 className="text-[28px] sm:text-3xl font-medium">
-            Ready to take control?
-          </h2>
-          <p className="text-Gray-purple">
-            Start building better financial habits today.
-          </p>
-          <Link
-            href={"/"}
-            className="bg-Purple py-4 px-6 rounded-full text-white font-medium flex gap-1 items-center hover:bg-[#8062D6]/80 duration-300"
+          <motion.h2
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3, duration: 0.5 }}
+            className="text-[28px] sm:text-3xl font-medium"
           >
-            Get Started
-            <MdOutlineArrowRightAlt className="text-xl" />
-          </Link>
+            Ready to take control?
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4, duration: 0.5 }}
+            className="text-Gray-purple"
+          >
+            Start building better financial habits today.
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.5, duration: 0.5 }}
+          >
+            <Link
+              href={"/"}
+              className="bg-Purple py-4 px-6 rounded-full text-white font-medium flex gap-1 items-center hover:bg-[#8062D6]/80 duration-300"
+            >
+              Get Started
+              <MdOutlineArrowRightAlt className="text-xl" />
+            </Link>
+          </motion.div>
         </div>
       </div>
     </section>

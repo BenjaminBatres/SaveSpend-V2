@@ -1,4 +1,7 @@
+import * as motion from "motion/react-client";
+
 interface IProps {
+  id: number;
   icon: React.ReactNode;
   title: string;
   desc: string;
@@ -8,13 +11,20 @@ interface IProps {
 
 export default function Features({
   icon,
+  id,
   title,
   desc,
   children,
   theme,
 }: IProps) {
   return (
-    <div className="px-4 py-6 bg-white rounded-3xl flex flex-col gap-5">
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: (id + 1) * 0.15, duration: 0.5 }}
+      className="px-4 py-6 bg-white rounded-3xl flex flex-col gap-5"
+    >
       <div
         className={`flex justify-center items-center ${theme} rounded-2xl size-14`}
       >
@@ -25,6 +35,6 @@ export default function Features({
         <p className="text-Gray-purple">{desc}</p>
       </div>
       <div className={`p-3 rounded-2xl ${theme} w-full`}>{children}</div>
-    </div>
+    </motion.div>
   );
 }

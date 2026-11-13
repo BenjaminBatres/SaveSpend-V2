@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { RiArrowRightUpLongLine } from "react-icons/ri";
 import Menu from "./Menu";
-
+import * as motion from "motion/react-client";
 export default function Navbar() {
   const links = [
     {
@@ -24,7 +24,12 @@ export default function Navbar() {
   return (
     <header className="fixed w-full px-5 z-50">
       <div className="max-w-300 mx-auto py-5 sm:py-8">
-        <nav className="flex justify-between items-center backdrop-blur-2xl bg-white/80 rounded-full py-2 px-4 shadow-lg">
+        <motion.nav
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="flex justify-between items-center backdrop-blur-2xl bg-white/80 rounded-full py-2 px-4 shadow-lg"
+        >
           <h1 className="text-[30px] sm:text-4xl font-bold text-[#1e1926]">
             <Link href={"/"}>SaveSpend</Link>
           </h1>
@@ -55,7 +60,7 @@ export default function Navbar() {
             </div>
           </Link>
           <Menu links={links} />
-        </nav>
+        </motion.nav>
       </div>
     </header>
   );
