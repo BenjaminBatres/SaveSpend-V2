@@ -46,7 +46,7 @@ export default function Navbar() {
             ))}
           </ul>
           <Link
-            href={"/"}
+            href={"/get-started"}
             className="hidden md:flex items-center gap-3.5 transition-all duration-300 group w-fit py-2 pl-5 pr-2.5 font-medium bg-Purple text-white rounded-full"
           >
             Get Started
