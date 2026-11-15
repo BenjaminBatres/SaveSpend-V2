@@ -34,7 +34,7 @@ export default function HeroSection() {
               transition={{ delay: 0.3, duration: 0.5 }}
             >
               <Link
-                href={"/"}
+                href={"/sign-up"}
                 className="flex items-center gap-3.5 transition-all duration-300 group w-fit py-5 px-8 font-medium lg:text-lg bg-Purple text-white rounded-full"
               >
                 Get Started

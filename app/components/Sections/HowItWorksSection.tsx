@@ -171,7 +171,7 @@ export default function HowItWorksSection() {
             transition={{ delay: 0.5, duration: 0.5 }}
           >
             <Link
-              href={"/"}
+              href={"/sign-up"}
               className="bg-Purple py-4 px-6 rounded-full text-white font-medium flex gap-1 items-center hover:bg-[#8062D6]/80 duration-300"
             >
               Get Started

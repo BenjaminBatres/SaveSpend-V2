@@ -79,7 +79,7 @@ export default function Menu({ links }: IProps) {
               </Link>
 
               <Link
-                href="/signup"
+                href="/sign-up"
                 onClick={() => setIsOpen(false)}
                 className="rounded-xl bg-Purple px-4 py-3 text-center font-semibold text-white transition hover:bg-Purple/80"
               >

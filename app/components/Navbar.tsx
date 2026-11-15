@@ -5,10 +5,6 @@ import * as motion from "motion/react-client";
 export default function Navbar() {
   const links = [
     {
-      path: "#",
-      name: "Home",
-    },
-    {
       path: "#features",
       name: "Features",
     },
@@ -28,7 +24,7 @@ export default function Navbar() {
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="flex justify-between items-center backdrop-blur-2xl bg-white/80 rounded-full py-2 px-4 shadow-lg"
+          className="flex justify-between flex-wrap items-center backdrop-blur-2xl bg-white/80 rounded-full py-2 px-4 shadow-lg"
         >
           <h1 className="text-[30px] sm:text-4xl font-bold text-[#1e1926]">
             <Link href={"/"}>SaveSpend</Link>
@@ -45,20 +41,28 @@ export default function Navbar() {
               </li>
             ))}
           </ul>
-          <Link
-            href={"/get-started"}
-            className="hidden md:flex items-center gap-3.5 transition-all duration-300 group w-fit py-2 pl-5 pr-2.5 font-medium bg-Purple text-white rounded-full"
-          >
-            Get Started
-            <div className="relative w-8 h-8 bg-white text-Purple overflow-hidden rounded-full text-Primary text-2xl">
-              <span className="absolute inset-0 flex items-center justify-center transition-transform duration-200 group-hover:translate-x-6 group-hover:-translate-y-6">
-                <RiArrowRightUpLongLine />
-              </span>
-              <span className="absolute inset-0 flex items-center justify-center -translate-x-6 translate-y-6 transition-transform duration-200 group-hover:translate-x-0 group-hover:translate-y-0">
-                <RiArrowRightUpLongLine />
-              </span>
-            </div>
-          </Link>
+          <div className="hidden md:flex items-center gap-3">
+            <Link
+              href="/login"
+              className="font-medium hover:text-Purple transition-colors duration-300"
+            >
+              Log In
+            </Link>
+            <Link
+              href={"/sign-up"}
+              className="flex items-center gap-3.5 transition-all duration-300 group w-fit py-2 pl-5 pr-2.5 font-medium bg-Purple text-white rounded-full"
+            >
+              Get Started
+              <div className="relative w-8 h-8 bg-white text-Purple overflow-hidden rounded-full text-Primary text-2xl">
+                <span className="absolute inset-0 flex items-center justify-center transition-transform duration-200 group-hover:translate-x-6 group-hover:-translate-y-6">
+                  <RiArrowRightUpLongLine />
+                </span>
+                <span className="absolute inset-0 flex items-center justify-center -translate-x-6 translate-y-6 transition-transform duration-200 group-hover:translate-x-0 group-hover:translate-y-0">
+                  <RiArrowRightUpLongLine />
+                </span>
+              </div>
+            </Link>
+          </div>
           <Menu links={links} />
         </motion.nav>
       </div>
