@@ -1,4 +1,3 @@
-import Link from "next/link";
 import SignUpForm from "../components/SignUpForm";
 import AuthForm from "../components/AuthForm";
 
