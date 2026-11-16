@@ -3,9 +3,15 @@ import Link from "next/link";
 import { useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { AiOutlineLoading } from "react-icons/ai";
-import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  updateProfile,
+  signInWithPopup,
+  GoogleAuthProvider,
+} from "firebase/auth";
 import { getFirebaseErrorMessage } from "../firebase/getFirebaseErrorMessage";
 import { auth } from "../firebase/firebase";
+import { useRouter } from "next/navigation";
 
 type FieldValues = {
   email: string;
@@ -21,6 +27,7 @@ type InputField = {
 };
 
 export default function SignUpForm() {
+  const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
   const [userDisplayName, setUserDisplayName] = useState("");
@@ -28,6 +35,12 @@ export default function SignUpForm() {
     email: "",
     password: "",
   });
+  const userNameMinErrorMessage =
+    "Display name must be at least 3 characters long.";
+  const userNameMaxErrorMessage = "Display name cannot exceed 20 characters.";
+  const emailErrorMessage = "Please enter a valid email address.";
+  const passwordErrorMessage = "Please enter your password.";
+  const passwordMinErrorMessage = "Password must be at least 8 character long.";
   const inputFields: InputField[] = [
     {
       label: "Email",
@@ -45,10 +58,6 @@ export default function SignUpForm() {
     },
   ];
 
-  const isValidEmail = (value: string) =>
-    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
-  const isValidPassword = (value: string) => value.length >= 8;
-
   const handleInputChange = (stateKey: string, value: string) => {
     setFieldValues({
       ...fieldValues,
@@ -56,20 +65,27 @@ export default function SignUpForm() {
     });
   };
 
-  const showError = (field: string): boolean => {
-    if (field === "email") {
-      return !isValidEmail(fieldValues.email) && fieldValues.email.length > 0;
-    }
-
-    if (field === "password") {
-      return (
-        !isValidPassword(fieldValues.password) &&
-        fieldValues.password.length > 0
-      );
-    }
-
-    return false;
+  const handleErrors = (err: string) => {
+  const errorMessages: Record<string, string[]> = {
+    name: [userNameMinErrorMessage, userNameMaxErrorMessage],
+    email: [emailErrorMessage],
+    password: [passwordErrorMessage, passwordMinErrorMessage],
   };
+
+  return errorMessages[err]?.includes(message)
+    ? "border-pink-500"
+    : "border-zinc-300";
+};
+
+  const provider = new GoogleAuthProvider();
+  const handleGoogleSignUp = async () => {
+    const results = await signInWithPopup(auth, provider);
+    const user = results.user;
+    if (user) {
+      router.push("/onboarding");
+    }
+  };
+
   const handleSubmit = async (e: any) => {
     setMessage("");
     setLoading(true);
@@ -93,6 +109,7 @@ export default function SignUpForm() {
       await updateProfile(user, {
         displayName: userDisplayName,
       });
+      router.push("/onboarding");
     } catch (err) {
       setMessage(getFirebaseErrorMessage(err));
     } finally {
@@ -118,7 +135,7 @@ export default function SignUpForm() {
           id="name"
           placeholder="John Doe"
           onChange={(e) => setUserDisplayName(e.target.value)}
-          className={`border border-zinc-300 focus:outline-Purple rounded-lg p-3`}
+          className={`border ${handleErrors("name")} focus:outline-Purple rounded-lg p-3`}
         />
       </div>
       {/* Email and password */}
@@ -131,7 +148,7 @@ export default function SignUpForm() {
             value={fieldValues[field.stateKey] || ""}
             placeholder={field.placeholder}
             onChange={(e) => handleInputChange(field.stateKey, e.target.value)}
-            className={`border rounded-lg p-3 ${showError(field.type) ? "border-pink-500" : "border-zinc-300"} focus:outline-Purple`}
+            className={`border rounded-lg p-3 ${handleErrors(field.id)} focus:outline-Purple`}
           />
           {field.type === "password" && (
             <p className="text-Gray-purple text-sm">At least 8 characters</p>
@@ -157,7 +174,10 @@ export default function SignUpForm() {
           <p className="text-zinc-400 text-sm">OR</p>
         </div>
 
-        <button className="border border-zinc-300 rounded-full text-center flex justify-center items-center gap-2 w-full py-3.5 font-semibold">
+        <button
+          onClick={handleGoogleSignUp}
+          className="border border-zinc-300 rounded-full text-center flex justify-center items-center gap-2 w-full py-3.5 font-semibold active:translate-y-1 cursor-pointer"
+        >
           <FcGoogle className="text-2xl" />
           Sign up with Google
         </button>
