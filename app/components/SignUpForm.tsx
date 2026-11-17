@@ -181,6 +181,11 @@ export default function SignUpForm() {
           <FcGoogle className="text-2xl" />
           Sign up with Google
         </button>
+        <Link href={'/demo'}
+          className="border border-Purple text-Purple rounded-full text-center flex justify-center w-full py-3.5 font-semibold active:translate-y-1 cursor-pointer hover:bg-Purple hover:text-white duration-300"
+        >
+          Explore Demo
+        </Link>
         <div className="flex justify-center gap-1">
           <p className="text-Gray-purple">Already have an account?</p>
           <Link
