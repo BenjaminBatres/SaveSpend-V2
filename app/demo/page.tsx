@@ -1,7 +1,8 @@
-import React from 'react'
-
+import DemoDashboard from "../components/features/dashboard/DemoDashboard";
 export default function page() {
   return (
-    <div>page</div>
-  )
+    <>
+      <DemoDashboard />
+    </>
+  );
 }
