@@ -1,11 +1,10 @@
-import React from 'react'
-import AuthForm from '../components/AuthForm'
-import LoginForm from '../components/LoginForm'
+import AuthForm from "../components/features/auth/AuthForm";
+import LoginForm from "../components/features/auth/LoginForm";
 
 export default function page() {
   return (
-    <AuthForm headerDesc='Welcome back'>
-        <LoginForm />
+    <AuthForm headerDesc="Welcome back">
+      <LoginForm />
     </AuthForm>
-  )
+  );
 }
