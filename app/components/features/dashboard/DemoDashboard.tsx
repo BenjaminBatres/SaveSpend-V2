@@ -12,6 +12,7 @@ import DashboardGoals from "./DashboardGoals";
 import DashboardTransaction from "./DashboardTransaction";
 import MobileNavbar from "../../layouts/MobileNavbar";
 import Sidebar from "../../layouts/Sidebar";
+import TransactionsTab from "./TransactionsTab";
 export default function DemoDashboard() {
   const [activeTab, setActiveTab] = useState("Overview");
   const tabs = [
@@ -44,17 +45,22 @@ export default function DemoDashboard() {
         tabs={tabs}
       />
       <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} tabs={tabs} />
-      <main className="bg-[#f3f0fe] pl-4 pt-4 pb-29 pr-4 lg:pr-0 lg:py-4 lg:ml-75 gap-5 relative">
-        <div className="grid gap-5 lg:overflow-y-auto lg:pr-4">
-          <DashboardHeader name={demoUser.name} />
-          <DashboardIncome
-            balance={demoUser.balance}
-            expenses={demoUser.expenses}
-            income={demoUser.income}
-          />
-          <DashboardGoals />
-          <DashboardTransaction />
-        </div>
+      <main
+        className={`bg-[#f3f0fe] pt-4 pb-29 px-4 lg:py-4 lg:ml-75 relative`}
+      >
+        {activeTab === "Overview" && (
+          <div className="grid gap-5 lg:overflow-y-auto">
+            <DashboardHeader name={demoUser.name} />
+            <DashboardIncome
+              balance={demoUser.balance}
+              expenses={demoUser.expenses}
+              income={demoUser.income}
+            />
+            <DashboardGoals />
+            <DashboardTransaction />
+          </div>
+        )}
+        {activeTab === "Transactions" && <TransactionsTab />}
       </main>
     </>
   );
