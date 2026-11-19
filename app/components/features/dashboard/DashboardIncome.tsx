@@ -27,7 +27,7 @@ export default function DashboardIncome({
   return (
     <div className="grid sm:grid-cols-3 gap-4 auto-rows-30">
       {userIncomeDetails.map((detail, id) => (
-        <div key={id} className="bg-white p-3 rounded-2xl space-y-2">
+        <div key={id} className="bg-white p-3 rounded-2xl space-y-2 shadow-sm">
           <h3 className="text-Gray-purple text-sm">{detail.title}</h3>
           <p className="text-3xl font-semibold">
             ${detail.balance.toLocaleString()}
