@@ -78,7 +78,7 @@ export default function LoginForm() {
   };
 
   const provider = new GoogleAuthProvider();
-  const handleGoogleSignUp = async () => {
+  const handleGoogleSignIn = async () => {
     const results = await signInWithPopup(auth, provider);
     const user = results.user;
     if (user) {
@@ -143,7 +143,7 @@ export default function LoginForm() {
         </div>
 
         <button
-          onClick={handleGoogleSignUp}
+          onClick={handleGoogleSignIn}
           className="border border-zinc-300 rounded-full text-center flex justify-center items-center gap-2 w-full py-3.5 font-semibold cursor-pointer active:translate-y-1"
         >
           <FcGoogle className="text-2xl" />
