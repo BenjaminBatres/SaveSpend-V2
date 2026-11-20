@@ -53,24 +53,24 @@ export default function Transaction({
         </div>
       </td>
       <td
-        className={`flex flex-col gap-2 sm:table-cell items-end pl-5 pr-3 sm:pr-0  py-4 font-bold ${category === "Income" && "text-Green"}`}
+        className={`flex flex-col gap-2 sm:table-cell items-end pl-5 pr-3 sm:pr-0 py-4`}
       >
         {category === "Income" ? (
-          <>
+          <span className="text-Green font-semibold">
             {new Intl.NumberFormat("en-US", {
               style: "currency",
               currency: "USD",
             }).format(amount)}
-          </>
+          </span>
         ) : (
-          <>
+          <span className="text-[#E05252] font-semibold">
             {new Intl.NumberFormat("en-US", {
               style: "currency",
               currency: "USD",
             }).format(amount * -1)}
-          </>
+          </span>
         )}
-        <span className="text-black text-sm sm:hidden">
+        <span className="text-[15px] sm:hidden font-medium">
           {new Date(date).toLocaleDateString("en-US", {
             year: "numeric",
             day: "numeric",
