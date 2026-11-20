@@ -14,7 +14,7 @@ export default function DashboardTransaction() {
               <p className="font-semibold">{transaction.name}</p>
               <p className="text-Gray-purple">{transaction.category}</p>
             </div>
-            <p className="font-semibold">-${transaction.amount.toFixed(2)}</p>
+            <p className="font-semibold text-[#E05252]">-${transaction.amount.toFixed(2)}</p>
           </div>
         ))}
       </div>

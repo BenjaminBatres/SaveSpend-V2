@@ -22,7 +22,7 @@ export default function DashboardHeader({ name }: IProp) {
       </div>
       <div className="rounded-2xl bg-Purple-Theme px-3 py-5 space-y-2.5">
         <div className="space-y-3">
-          <h3 className="text-2xl font-bold">Exploring SaveSpend?</h3>
+          <h3 className="text-2xl font-semibold">Exploring SaveSpend?</h3>
           <p className="text-Gray-purple">
             You're viewing sample financial data. Create an account to manage
             your own finances.
