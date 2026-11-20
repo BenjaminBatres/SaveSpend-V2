@@ -30,12 +30,12 @@ export default function TransactionsTab() {
 
   return (
     <div className="px-4 py-5 bg-white rounded-2xl space-y-4">
-      <div className="flex flex-col sm:flex-row items-center sm:items-start gap-y-5 justify-between">
+      <div className="flex flex-col sm:flex-row items-center sm:items-start gap-y-3 justify-between">
         <div className="space-y-1.5">
           <h2 className="text-3xl font-semibold text-center sm:text-left">
             Transactions
           </h2>
-          <p className="text-Gray-purple text-center sm:text-left">
+          <p className="text-Gray-purple text-[15px] sm:text-base text-center sm:text-left">
             View and manage your transactions.
           </p>
         </div>
@@ -82,7 +82,7 @@ export default function TransactionsTab() {
         </div>
       </div>
 
-      <table className="w-full shadow-sm">
+      <table className="w-full shadow-md">
         <thead className="bg-Purple-Theme hidden sm:table-header-group">
           <tr>
             {tableTop.map((item) => (
