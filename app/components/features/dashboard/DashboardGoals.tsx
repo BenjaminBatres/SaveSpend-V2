@@ -31,7 +31,7 @@ export default function DashboardGoals() {
     },
   } satisfies ChartConfig;
   return (
-    <div className="grid sm:grid-cols-2 auto-rows-70 gap-4">
+    <div className="grid sm:grid-cols-2 sm:auto-rows-70 gap-4">
       <div className="px-3.5 pt-5 pb-12 bg-white rounded-2xl overflow-hidden shadow-sm">
         <h2 className="text-2xl font-semibold">Monthly spending</h2>
         <ChartContainer config={chartConfig} className="h-full w-full">
