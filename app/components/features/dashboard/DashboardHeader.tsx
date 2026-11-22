@@ -9,7 +9,7 @@ export default function DashboardHeader({ name }: IProp) {
     <div className="bg-white px-4 py-6 rounded-2xl space-y-4 sm:space-y-2">
       <div className="flex flex-col sm:flex-row space-y-4 justify-between items-center">
         <div className="space-y-2">
-          <h2 className="text-2xl font-semibold">
+          <h2 className="text-2xl font-bold">
             Good moring, {name.split(" ")[0]}!
           </h2>
           <p className="text-Gray-purple text-[15px]">
