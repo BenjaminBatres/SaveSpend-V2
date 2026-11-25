@@ -14,14 +14,14 @@ export default function Sidebar({activeTab, setActiveTab, tabs}:IProps) {
   return (
     <div className="hidden lg:block fixed inset-0 bg-[#f3f0fe]">
       <div className="mt-4 ml-4 py-5 px-4 bg-white rounded-2xl space-y-7 h-[96.5%] w-60 relative">
-        <h2 className="text-3xl font-bold text-Purple">SaveSpend</h2>
+        <h2 className="text-3xl font-bold text-Purple pl-2.75">SaveSpend</h2>
 
-        <ul className="space-y-7">
+        <ul>
           {tabs.map((tab, id) => (
             <li
               key={id}
               onClick={() => setActiveTab(tab.name)}
-              className={`flex items-center gap-3 ${activeTab === tab.name ? "text-Purple font-semibold" : "text-Gray-purple"} cursor-pointer hover:text-Purple`}
+              className={`flex items-center gap-3 py-4 pl-4 ${activeTab === tab.name ? "text-Purple font-semibold bg-Purple-Theme rounded-l-2xl" : "text-Gray-purple"} cursor-pointer hover:text-Purple`}
             >
               <span className="text-2xl">{tab.icon}</span>
               <span>{tab.name}</span>
