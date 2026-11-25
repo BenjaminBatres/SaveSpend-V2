@@ -13,7 +13,7 @@ interface IProps {
 export default function Sidebar({activeTab, setActiveTab, tabs}:IProps) {
   return (
     <div className="hidden lg:block fixed inset-0 bg-[#f3f0fe]">
-      <div className="mt-4 ml-4 py-5 px-4 bg-white rounded-2xl space-y-7 h-[96.5%] w-71 relative">
+      <div className="mt-4 ml-4 py-5 px-4 bg-white rounded-2xl space-y-7 h-[96.5%] w-60 relative">
         <h2 className="text-3xl font-bold text-Purple">SaveSpend</h2>
 
         <ul className="space-y-7">
