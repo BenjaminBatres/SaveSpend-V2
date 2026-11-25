@@ -8,7 +8,7 @@ interface IBudget {
   amount: number;
 }
 export default function Budget({ icon, spent, amount, name }: IBudget) {
-  const colors = categoryColors[name];
+  const colors = categoryColors[name as keyof typeof categoryColors];
   return (
     <div className="flex flex-col sm:flex-row gap-4">
       <div className="flex gap-4 w-full xl:w-1/2 2xl:w-full">
