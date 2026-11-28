@@ -10,8 +10,9 @@ import Sidebar from "../../layouts/Sidebar";
 import TransactionsTab from "./TransactionsTab";
 import OverviewTab from "./OverviewTab";
 import BudgetTab from "./BudgetTab";
+import BillsTab from "./billsTab/BillsTab";
 export default function DemoDashboard() {
-  const [activeTab, setActiveTab] = useState("Overview");
+  const [activeTab, setActiveTab] = useState("Bills");
   const tabs = [
     {
       icon: <MdOutlineDashboard />,
@@ -48,6 +49,7 @@ export default function DemoDashboard() {
         {activeTab === "Overview" && <OverviewTab />}
         {activeTab === "Transactions" && <TransactionsTab />}
         {activeTab === "Budget" && <BudgetTab />}
+        {activeTab === "Bills" && <BillsTab />}
       </main>
     </>
   );
